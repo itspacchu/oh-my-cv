@@ -1,6 +1,9 @@
 # Build with pnpm
 FROM docker.io/gplane/pnpm:node21-alpine AS builder
 
+ARG NUXT_PUBLIC_GOOGLE_FONTS_KEY=""
+ENV NUXT_PUBLIC_GOOGLE_FONTS_KEY="$NUXT_PUBLIC_GOOGLE_FONTS_KEY"
+
 WORKDIR /ohmycv
 
 COPY . .
